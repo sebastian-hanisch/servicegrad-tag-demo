@@ -1,7 +1,6 @@
 # Servicegrad über den Tag – Streamlit-Demo
 
-<!-- nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-servicegrad-tag-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-servicegrad-tag-demo.streamlit.app/)**
 
 Fall-Demo der Gruppe Personaleinsatzplanung, die Brücke zwischen der Schichtplanung und der Warteschlangen-Linie. Ein Kontaktcenter will an jedem Tag
 80 % der Anrufe innerhalb von 20 Sekunden annehmen (Servicezeit 20 s, mittlere Bediendauer 240 s). Es rechnet erst den Bedarf je Stunde (Erlang C) und
