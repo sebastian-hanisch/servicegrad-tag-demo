@@ -146,7 +146,8 @@ Fünf Presets, alle auf gemessenen Zellen der Messreihe; Zufalls-Seed 2 (die typ
   die Abdeckung simuliert 20 Instanzen je Profil und Kombination (Richtwerte, kein Beweis).
 - **Aussagen außerhalb der 13 Zellen sind bedingt:** Fallstrick 1 gilt in allen Kombinationen, die Fallstricke 2 und 3 nicht (siehe Abdeckung). Die Konkavität des Servicegrads ab
   c_t(z) ist gemessen, kein Beweis; zur Laufzeit wird sie je Stunde geprüft und sonst die binäre Fassung benutzt.
-- **Rechenzeiten gelten für dieses Gerät** (16 Kerne, Python 3.14, SciPy 1.18); Streamlit Cloud ist nicht gemessen (Planungsannahme: bis Faktor 3 langsamer). HiGHS-Aktualisierungen
+- **Rechenzeiten gelten für dieses Gerät** (16 Kerne, Python 3.14, SciPy 1.18); auf Streamlit Cloud erschien das Ergebnis im Browser grob nach 15 bis 25 s nach dem Aufruf (Standardfall und der ungünstigste
+  Fall, Größe groß mit 480 s; Beobachtung am 2026-10-11, mit Seitenaufbau, keine saubere Messung). HiGHS-Aktualisierungen
   ändern Gleichstände und Zeiten, nie die Kosten bewiesener Optima.
 
 ## Verwandte Demos mit demselben mathematischen Modell
@@ -210,7 +211,8 @@ Vorgehen kann weit vom Optimum liegen. Beide per Suche bestätigt (Treffer 2026-
 
 ## Bewusst nicht umgesetzt
 
-Mehrere Qualifikationen und Anruftypen (Multiskill), Abwanderung und Wiederanruf (Erlang A), nichtexponentielle Bedienzeiten, eine simulationsbasierte Planung
+Mehrere Qualifikationen und Anruftypen (Multiskill; als Tagesbilanz ohne Warteschlange und ohne Stundenlage zeigt die Verteilung der
+Zusatzqualifikationen `kreuzschulung-demo`, Skill-based Routing mit Warteschlange bleibt offen), Abwanderung und Wiederanruf (Erlang A), nichtexponentielle Bedienzeiten, eine simulationsbasierte Planung
 (sie würde O vermutlich verbessern; nicht gemessen), Pausen und Ruhezeiten, Wochenmuster (das ist der Wochen-Abschnitt in `shift_demo`), Schichtfixkosten,
 Prognosefehler, Mindestwerte 30 und 70 % (nur 50 % ist gemessen), Kalibrierung an echten Daten und Personen statt Besetzung (Dienstplanung).
 
