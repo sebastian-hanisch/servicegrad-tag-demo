@@ -74,6 +74,17 @@ Die erste Demo des Portfolios, die die Warteschlangenrechnung (Erlang C) und die
 Machine Learning. Alle Instanzen sind erfunden: Beispielwerte, keine Prognose für Ihren Betrieb.
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/servicegrad-tag-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Ein Kundendienst am Telefon verspricht, dass ein bestimmter Anteil der Anrufe schnell angenommen wird, gerechnet über den ganzen Tag. Wer dieses Tagesziel in jeder Stunde einzeln verlangt, liefert mehr als versprochen und bezahlt dafür. Wer nur den Tag zählt, gibt scheinbar billig die ruhigen Stunden auf und lässt sie unbesetzt. Dann bleiben Anrufer in der Leitung, und die entstehende Schlange verdirbt die Stunden danach. Die Demo zeigt vier Pläne für denselben erfundenen Tag nebeneinander: die Rechnung je Stunde, ein einheitlich abgesenktes Stundenziel, den freien Tagesplan und die gemeinsame Planung mit Mindestmaß je Stunde. Daneben steht eine vorgerechnete Messreihe über viele erfundene Tagesverläufe, die zeigt, was von der scheinbaren Ersparnis bleibt.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/servicegrad-tag-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 st.caption(
     "Den Stundenbedarf nimmt die [Schichtplanung](https://sebastianhanisch-shift-demo.streamlit.app/) als gegeben; wie er aus einem Servicegrad-Ziel entsteht, und was die "
     "Trennung kostet, zeigt diese Demo. Die [Wurzelregel](https://sebastianhanisch-square-root-staffing-demo.streamlit.app/) gilt je Stunde; dort rundet ein "
@@ -397,6 +408,26 @@ einzige Wahl. Eine simulationsbasierte gemeinsame Planung würde O vermutlich ve
     )
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/servicegrad-tag-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind die Last je Stunde eines Tages (in Erlang), das Tagesziel (Anteil der Anrufe, die innerhalb von 20 Sekunden angenommen werden) und eine Auswahl zulässiger Schichtlängen. Gesucht sind die Schichten mit den wenigsten Personenstunden, die das Ziel einhalten, und was der Plan unter Rückstau tatsächlich liefert.
+
+| Symbol | Bedeutung |
+|---|---|
+| $a_t$ | Angebot (Last) in Stunde $t$ in Erlang: Anrufrate mal mittlere Bediendauer |
+| $n_t$ | Besetzung (Zahl der Bediener) in Stunde $t$ |
+| $SL_t(n)$ | Servicegrad der Stunde $t$ bei $n$ Bedienern: Anteil der in 20 s angenommenen Anrufe |
+| $C(n, a)$ | Erlang C: Wahrscheinlichkeit, dass ein ankommender Anruf warten muss |
+| $s$, $\mathrm{AHT}$ | Servicezeit (20 s) und mittlere Bediendauer |
+| $c_t(z)$ | kleinste Besetzung der Stunde $t$ mit Servicegrad mindestens $z$ |
+| $L_j$, $x_j$ | Länge und Anzahl der Schichten der Art $j$ |
+| $lb_t$ | untere Grenze der Besetzung in Stunde $t$ |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/servicegrad-tag-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Servicegrad je Stunde** bei n Bedienern und Angebot $a_t$ (Erlang): $SL_t(n) = 1 - C(n, a_t)\, e^{-(n - a_t)\, s/\mathrm{AHT}}$ für $n > a_t$, sonst $0$; mit
