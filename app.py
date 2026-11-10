@@ -89,7 +89,7 @@ st.caption(
     "Den Stundenbedarf nimmt die [Schichtplanung](https://sebastianhanisch-shift-demo.streamlit.app/) als gegeben; wie er aus einem Servicegrad-Ziel entsteht, und was die "
     "Trennung kostet, zeigt diese Demo. Die [Wurzelregel](https://sebastianhanisch-square-root-staffing-demo.streamlit.app/) gilt je Stunde; dort rundet ein "
     "[Planungsraster](https://sebastianhanisch-time-varying-arrivals-demo.streamlit.app/) auf, hier tun es die Schichtlängen. Erlang C stammt aus der "
-    "[M/M/c-Warteschlange](https://sebastianhanisch-mmc-queue-demo.streamlit.app/); dasselbe Modell trägt auch das Terminal-Gate der "
+    "[M/M/c-Warteschlange](https://sebastianhanisch-mmc-queue-demo.streamlit.app/); dasselbe Modell gilt auch für das Terminal-Gate der "
     "[Warteschlangentheorie-Linie](https://sebastianhanisch.net/konzepte-warteschlangentheorie.html) (Lkw statt Anrufe)."
 )
 

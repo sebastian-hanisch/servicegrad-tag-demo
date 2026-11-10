@@ -6,7 +6,7 @@ Fall-Demo der Gruppe Personaleinsatzplanung, die Brücke zwischen der Schichtpla
 80 % der Anrufe innerhalb von 20 Sekunden annehmen (Servicezeit 20 s, mittlere Bediendauer 240 s). Es rechnet erst den Bedarf je Stunde (Erlang C) und
 legt dann Schichten darüber. [Schichtplanung](https://sebastianhanisch-shift-demo.streamlit.app/) deckt einen gegebenen Stundenbedarf,
 [Wurzelregel](https://sebastianhanisch-square-root-staffing-demo.streamlit.app/) und [zeitvariable Last](https://sebastianhanisch-time-varying-arrivals-demo.streamlit.app/)
-rechnen den Bedarf aus der Ankunftsrate; hier werden beide verbunden. Dasselbe Modell trägt auch das Terminal-Gate der
+rechnen den Bedarf aus der Ankunftsrate; hier werden beide verbunden. Dasselbe Modell gilt auch für das Terminal-Gate der
 [Warteschlangen-Linie](https://sebastianhanisch.net/konzepte-warteschlangentheorie.html) (Lkw statt Anrufe, Minutenziele). Optimierung plus Simulation, kein Machine Learning.
 Alle Instanzen sind erfunden: Beispielwerte, keine Prognose für einen echten Betrieb.
 
